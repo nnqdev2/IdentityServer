@@ -42,6 +42,7 @@ namespace IdentityServerAspNetIdentity
                     AlwaysIncludeUserClaimsInIdToken = true,
                     IdentityTokenLifetime = 86400,
                     AccessTokenLifetime = 84600,
+                    EnableLocalLogin = false,
                     //AllowRememberConsent = true,
                 },
                  new Client
@@ -58,6 +59,7 @@ namespace IdentityServerAspNetIdentity
                     AlwaysIncludeUserClaimsInIdToken = true,
                     IdentityTokenLifetime = 86400,
                     AccessTokenLifetime = 84600,
+                    EnableLocalLogin = false,
                     //AllowRememberConsent = true,
                 }
             };

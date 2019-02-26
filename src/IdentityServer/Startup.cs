@@ -116,7 +116,7 @@ namespace IdentityServerAspNetIdentity
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseCors("default");
+            app.UseCors("AllowSpecificOrigin");
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();

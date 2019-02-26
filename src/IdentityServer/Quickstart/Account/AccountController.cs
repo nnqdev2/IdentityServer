@@ -238,7 +238,6 @@ namespace IdentityServer4.Quickstart.UI
                 if (client != null)
                 {
                     allowLocal = client.EnableLocalLogin;
-                    allowLocal = false;
                     if (client.IdentityProviderRestrictions != null && client.IdentityProviderRestrictions.Any())
                     {
                         providers = providers.Where(provider => client.IdentityProviderRestrictions.Contains(provider.AuthenticationScheme)).ToList();
