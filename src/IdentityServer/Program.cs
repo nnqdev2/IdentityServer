@@ -55,7 +55,7 @@ namespace IdentityServerAspNetIdentity
             return WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://localhost:44317;http://localhost:5000;http://deqwebdev")
+                //.UseUrls("http://localhost:44317;http://localhost:5000;http://deqwebdev")
                 .UseIISIntegration()
                     .UseStartup<Startup>()
                     .UseSerilog((context, configuration) =>
