@@ -55,7 +55,7 @@ namespace IdentityServerAspNetIdentity
             return WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://localhost:44317;http://localhost:5000;http://deqwebdev")
+                .UseUrls("http://localhost:44317;http://localhost:5000;http://deqwebdev/idsrv_dev")
                 .UseIISIntegration()
                     .UseStartup<Startup>()
                     .UseSerilog((context, configuration) =>
@@ -67,7 +67,8 @@ namespace IdentityServerAspNetIdentity
                             .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                             .Enrich.FromLogContext()
                             //.WriteTo.File(@"identityserver4_log.txt")
-                            .WriteTo.RollingFile(@"S:\Logs\IdentityServer\identityserver4_log.txt", retainedFileCountLimit: 2)
+                            .WriteTo.RollingFile(@"D:\Logs\IDSVR\identityserver4_dev_log.txt", retainedFileCountLimit: 2)
+                            //.WriteTo.RollingFile(@"S:\Logs\IdentityServer\identityserver4_log.txt", retainedFileCountLimit: 2)
                             .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Literate);
                     });
                     }

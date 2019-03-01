@@ -74,13 +74,20 @@ namespace IdentityServerAspNetIdentity
 
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowSpecificOrigin",
+                options.AddPolicy("AllowLocalOrigin",
                     builder => builder
                         .WithOrigins("http://localhost:4200")
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .AllowCredentials()
                     );
+                options.AddPolicy("AllowDevOrigin",
+                      builder => builder
+                          .WithOrigins("http://deqwebdev")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .AllowCredentials()
+          );
             });
 
             if (Environment.IsDevelopment())
@@ -116,7 +123,7 @@ namespace IdentityServerAspNetIdentity
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseCors("AllowSpecificOrigin");
+            app.UseCors("AllowDevOrigin");
             app.UseStaticFiles();
             app.UseIdentityServer();
             app.UseMvcWithDefaultRoute();
